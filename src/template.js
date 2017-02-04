@@ -3,8 +3,8 @@ window.Template = (function(){
   "use strict";
 
   function Template(path){
-    this.path = path;
-    this.data = null;
+    this.path = path || '';
+    this.html = '';
   }
 
   Template.prototype = {
@@ -16,7 +16,7 @@ window.Template = (function(){
       url: this.path,
       context: this,
       success: function(data) {
-        this.data = data;
+        this.html = data;
       }
     });
     return ajax.readyState;
