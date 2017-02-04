@@ -1,4 +1,7 @@
+
 window.Template = (function(){
+  "use strict";
+
   function Template(path){
     this.path = path;
     this.data = null;
