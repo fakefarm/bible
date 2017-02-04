@@ -24,5 +24,14 @@ describe("ViewSpec", function(){
     expect(template.get()).toBe(1);
   });
 
+  it("shows the contents", function (done) { // introduce done;
+
+    template.get();
+
+    setTimeout(function() { // introduce setTimeout;
+      var title = $(template.data).filter('h1');
+      expect($(title).hasClass('headline')).toBe(true);
+      done();
+    }, 0);
   });
 })
