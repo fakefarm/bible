@@ -15,6 +15,8 @@ describe("ViewSpec", function(){
 
   it("gets the template", function () {
     expect(template.get()).toBe(true);
+    // _dw I need to improve how I test this ajax.
+    expect(template.get()).toBe(1);
   });
 
   it("shows the contents", function () {

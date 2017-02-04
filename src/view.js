@@ -9,15 +9,14 @@ window.Template = (function(){
   };
 
   function get() {
-    $.ajax({
+    var ajax = $.ajax({
       url: this.path,
+      context: this,
       success: function(data) {
-        this.data = data; // how do I set data?
+        this.data = data;
       }
-    }).done(function(data){
-      this.data = data;
-      or is it here?
     });
+    return ajax.readyState;
   }
 
   return Template;
