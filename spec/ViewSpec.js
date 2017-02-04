@@ -1,3 +1,9 @@
+// testing locally requires overriding chrome safety;
+// normal;
+// open /Applications/Google\ Chrome.app --args --allow-file-access-from-files
+// Canary
+// open /Applications/Google\ Chrome\ Canary.app --args --allow-file-access-from-files
+
 describe("ViewSpec", function(){
   var template;
 
@@ -9,17 +15,14 @@ describe("ViewSpec", function(){
     expect(typeof template).toBe('object');
   });
 
-  it('can be passed a path to template',    function(){
+  it('can be passed a path to template', function(){
     expect(template.path).toBe('src/index.html');
   });
 
   it("gets the template", function () {
-    expect(template.get()).toBe(true);
     // _dw I need to improve how I test this ajax.
     expect(template.get()).toBe(1);
   });
 
-  it("shows the contents", function () {
-    expect(template.data).toBe("<html>");
   });
 })
