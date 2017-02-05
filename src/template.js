@@ -1,4 +1,3 @@
-
 window.Template = (function(){
   "use strict";
 
@@ -14,11 +13,13 @@ window.Template = (function(){
   function get() {
     var ajax = $.ajax({
       url: this.path,
-      context: this,
-      success: function(data) {
-        this.html = data;
-      }
+      context: this
     });
+
+    ajax.done(function(data){
+      this.html = data;
+      return data;
+    })
     return ajax.readyState;
   }
 
